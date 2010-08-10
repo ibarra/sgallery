@@ -14,24 +14,39 @@ Doctrine_Manager::getInstance()->bindComponent('SpUser', 'doctrine');
  * @property string $last_name
  * @property date $date
  * @property string $email
+ * @property string $web
+ * @property integer $level_id
+ * @property integer $status
+ * @property string $activation_key
+ * @property SpLevel $SpLevel
  * @property Doctrine_Collection $SpAlbum
  * 
- * @method integer             getIdUser()     Returns the current record's "id_user" value
- * @method string              getUsername()   Returns the current record's "username" value
- * @method string              getPassword()   Returns the current record's "password" value
- * @method string              getFirstName()  Returns the current record's "first_name" value
- * @method string              getLastName()   Returns the current record's "last_name" value
- * @method date                getDate()       Returns the current record's "date" value
- * @method string              getEmail()      Returns the current record's "email" value
- * @method Doctrine_Collection getSpAlbum()    Returns the current record's "SpAlbum" collection
- * @method SpUser              setIdUser()     Sets the current record's "id_user" value
- * @method SpUser              setUsername()   Sets the current record's "username" value
- * @method SpUser              setPassword()   Sets the current record's "password" value
- * @method SpUser              setFirstName()  Sets the current record's "first_name" value
- * @method SpUser              setLastName()   Sets the current record's "last_name" value
- * @method SpUser              setDate()       Sets the current record's "date" value
- * @method SpUser              setEmail()      Sets the current record's "email" value
- * @method SpUser              setSpAlbum()    Sets the current record's "SpAlbum" collection
+ * @method integer             getIdUser()         Returns the current record's "id_user" value
+ * @method string              getUsername()       Returns the current record's "username" value
+ * @method string              getPassword()       Returns the current record's "password" value
+ * @method string              getFirstName()      Returns the current record's "first_name" value
+ * @method string              getLastName()       Returns the current record's "last_name" value
+ * @method date                getDate()           Returns the current record's "date" value
+ * @method string              getEmail()          Returns the current record's "email" value
+ * @method string              getWeb()            Returns the current record's "web" value
+ * @method integer             getLevelId()        Returns the current record's "level_id" value
+ * @method integer             getStatus()         Returns the current record's "status" value
+ * @method string              getActivationKey()  Returns the current record's "activation_key" value
+ * @method SpLevel             getSpLevel()        Returns the current record's "SpLevel" value
+ * @method Doctrine_Collection getSpAlbum()        Returns the current record's "SpAlbum" collection
+ * @method SpUser              setIdUser()         Sets the current record's "id_user" value
+ * @method SpUser              setUsername()       Sets the current record's "username" value
+ * @method SpUser              setPassword()       Sets the current record's "password" value
+ * @method SpUser              setFirstName()      Sets the current record's "first_name" value
+ * @method SpUser              setLastName()       Sets the current record's "last_name" value
+ * @method SpUser              setDate()           Sets the current record's "date" value
+ * @method SpUser              setEmail()          Sets the current record's "email" value
+ * @method SpUser              setWeb()            Sets the current record's "web" value
+ * @method SpUser              setLevelId()        Sets the current record's "level_id" value
+ * @method SpUser              setStatus()         Sets the current record's "status" value
+ * @method SpUser              setActivationKey()  Sets the current record's "activation_key" value
+ * @method SpUser              setSpLevel()        Sets the current record's "SpLevel" value
+ * @method SpUser              setSpAlbum()        Sets the current record's "SpAlbum" collection
  * 
  * @package    sp_gallery
  * @subpackage model
@@ -99,11 +114,47 @@ abstract class BaseSpUser extends sfDoctrineRecord
              'primary' => false,
              'length' => '',
              ));
+        $this->hasColumn('web', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'length' => '',
+             ));
+        $this->hasColumn('level_id', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'primary' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('status', 'integer', 4, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'primary' => false,
+             'length' => 4,
+             ));
+        $this->hasColumn('activation_key', 'string', null, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => true,
+             'primary' => false,
+             'length' => '',
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('SpLevel', array(
+             'local' => 'level_id',
+             'foreign' => 'id_level'));
+
         $this->hasMany('SpAlbum', array(
              'local' => 'id_user',
              'foreign' => 'user_id'));

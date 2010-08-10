@@ -12,23 +12,23 @@ Doctrine_Manager::getInstance()->bindComponent('SpAlbum', 'doctrine');
  * @property string $name
  * @property integer $user_id
  * @property integer $category_id
- * @property SpCategory $SpCategory
  * @property SpUser $SpUser
+ * @property SpCategory $SpCategory
  * 
  * @method integer    getIdAlbum()     Returns the current record's "id_album" value
  * @method string     getDescription() Returns the current record's "description" value
  * @method string     getName()        Returns the current record's "name" value
  * @method integer    getUserId()      Returns the current record's "user_id" value
  * @method integer    getCategoryId()  Returns the current record's "category_id" value
- * @method SpCategory getSpCategory()  Returns the current record's "SpCategory" value
  * @method SpUser     getSpUser()      Returns the current record's "SpUser" value
+ * @method SpCategory getSpCategory()  Returns the current record's "SpCategory" value
  * @method SpAlbum    setIdAlbum()     Sets the current record's "id_album" value
  * @method SpAlbum    setDescription() Sets the current record's "description" value
  * @method SpAlbum    setName()        Sets the current record's "name" value
  * @method SpAlbum    setUserId()      Sets the current record's "user_id" value
  * @method SpAlbum    setCategoryId()  Sets the current record's "category_id" value
- * @method SpAlbum    setSpCategory()  Sets the current record's "SpCategory" value
  * @method SpAlbum    setSpUser()      Sets the current record's "SpUser" value
+ * @method SpAlbum    setSpCategory()  Sets the current record's "SpCategory" value
  * 
  * @package    sp_gallery
  * @subpackage model
@@ -85,12 +85,12 @@ abstract class BaseSpAlbum extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('SpCategory', array(
-             'local' => 'category_id',
-             'foreign' => 'id_category'));
-
         $this->hasOne('SpUser', array(
              'local' => 'user_id',
              'foreign' => 'id_user'));
+
+        $this->hasOne('SpCategory', array(
+             'local' => 'category_id',
+             'foreign' => 'id_category'));
     }
 }

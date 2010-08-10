@@ -25,7 +25,9 @@ class SpUser extends BaseSpUser
 	  {	    
 	    $this->setPassword(sha1('$GallerySopia' . $this->getPassword()));
 	    $this->setDate(date('Y-m-d'));
-            sfContext::getInstance()->getLogger()->err('executeCreate-> '. $this->getdate());
+	    $this->setStatus(1);
+	    $this->setActivationKey(sha1('SpGalleryKey' . date('Y-m-d H:i:s')));
+        sfContext::getInstance()->getLogger()->err('sopiError-> '. $this->getDate());
 	  }
 	  return parent::save($con);
 	}

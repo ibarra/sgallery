@@ -13,21 +13,29 @@ abstract class BaseSpUserFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'username'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'password'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'first_name' => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'last_name'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'date'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'email'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'username'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'password'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'first_name'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'last_name'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'date'           => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'email'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'web'            => new sfWidgetFormFilterInput(),
+      'level_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SpLevel'), 'add_empty' => true)),
+      'status'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'activation_key' => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'username'   => new sfValidatorPass(array('required' => false)),
-      'password'   => new sfValidatorPass(array('required' => false)),
-      'first_name' => new sfValidatorPass(array('required' => false)),
-      'last_name'  => new sfValidatorPass(array('required' => false)),
-      'date'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
-      'email'      => new sfValidatorPass(array('required' => false)),
+      'username'       => new sfValidatorPass(array('required' => false)),
+      'password'       => new sfValidatorPass(array('required' => false)),
+      'first_name'     => new sfValidatorPass(array('required' => false)),
+      'last_name'      => new sfValidatorPass(array('required' => false)),
+      'date'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
+      'email'          => new sfValidatorPass(array('required' => false)),
+      'web'            => new sfValidatorPass(array('required' => false)),
+      'level_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('SpLevel'), 'column' => 'id_level')),
+      'status'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'activation_key' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('sp_user_filters[%s]');
@@ -47,13 +55,17 @@ abstract class BaseSpUserFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id_user'    => 'Number',
-      'username'   => 'Text',
-      'password'   => 'Text',
-      'first_name' => 'Text',
-      'last_name'  => 'Text',
-      'date'       => 'Date',
-      'email'      => 'Text',
+      'id_user'        => 'Number',
+      'username'       => 'Text',
+      'password'       => 'Text',
+      'first_name'     => 'Text',
+      'last_name'      => 'Text',
+      'date'           => 'Date',
+      'email'          => 'Text',
+      'web'            => 'Text',
+      'level_id'       => 'ForeignKey',
+      'status'         => 'Number',
+      'activation_key' => 'Text',
     );
   }
 }

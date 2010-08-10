@@ -18,8 +18,12 @@ class SpUserForm extends BaseSpUserForm
       'password'   => new sfWidgetFormInputText(),
       'first_name' => new sfWidgetFormInputText(),
       'last_name'  => new sfWidgetFormInputText(),
-      'date'       => new sfWidgetFormDate(),
+      //'date'       => new sfWidgetFormDate(),
       'email'      => new sfWidgetFormInputText(),
+      'web'            => new sfWidgetFormInputText(),
+      'level_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SpLevel'), 'add_empty' => false)),
+      //'status'         => new sfWidgetFormInputText(),
+      //'activation_key' => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
@@ -28,8 +32,12 @@ class SpUserForm extends BaseSpUserForm
       'password'   => new sfValidatorString(),
       'first_name' => new sfValidatorString(),
       'last_name'  => new sfValidatorString(),
-      'date'       => new sfValidatorDate(),
+      //'date'       => new sfValidatorDate(),
       'email'      => new sfValidatorEmail(),
+      'web'            => new sfValidatorUrl(array('required' => false)),
+      'level_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('SpLevel'))),
+      //'status'         => new sfValidatorInteger(),
+      //'activation_key' => new sfValidatorString(),
     ));
 
     $this->widgetSchema->setNameFormat('sp_user[%s]');
