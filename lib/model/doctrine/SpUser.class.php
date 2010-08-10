@@ -21,11 +21,11 @@ class SpUser extends BaseSpUser
     
     public function save(Doctrine_Connection $con = null)
 	{
-	  if ($this->getPassword() && getDate() > date('Y-m-d'))
+	  if ($this->getPassword())
 	  {	    
 	    $this->setPassword(sha1('$GallerySopia' . $this->getPassword()));
 	    $this->setDate(date('Y-m-d'));
-	
+            sfContext::getInstance()->getLogger()->err('executeCreate-> '. $this->getdate());
 	  }
 	  return parent::save($con);
 	}
