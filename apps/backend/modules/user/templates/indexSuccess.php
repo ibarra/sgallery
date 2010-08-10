@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
+      <th>Id, username, name, email, role</th>
       <th>Username</th>      
       <th>First name</th>
       <th>Last name</th>
