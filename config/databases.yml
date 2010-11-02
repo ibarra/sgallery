@@ -2,6 +2,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'pgsql:host=localhost;dbname=sp_gallery'
-      username: postgres
-      password: elpadrino
+      dsn: 'pgsql:host=localhost;dbname=sgallery_git_beta'
+      username: mic 
+      password: simeadverti
