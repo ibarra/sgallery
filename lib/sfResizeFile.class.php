@@ -42,8 +42,8 @@ class sfResizedFile extends sfValidatedFile
 			}
 
 			$smallFile = $this->path.DIRECTORY_SEPARATOR.'s_'.$file;
-			$mediumFile = $this->path.DIRECTORY_SEPARATOR.'m_'.$file;
-			$hoverFile = $this->path.DIRECTORY_SEPARATOR.'h_'. $file;
+			//$msmallFile = $this->path.DIRECTORY_SEPARATOR.'ms_'.$file;
+			$mediumFile = $this->path.DIRECTORY_SEPARATOR.'m_'.$file;			
 			$file = $this->path.DIRECTORY_SEPARATOR.$file;
 		}
 
@@ -72,19 +72,21 @@ class sfResizedFile extends sfValidatedFile
 		}
 
 		// copy the temp file to the destination file
-		$thumbnail = new sfThumbnail(80, 80, true, true, 75, '');
+		$thumbnail = new sfThumbnail(50, 50, false, true, 90, '');
 		$thumbnail->loadFile($this->getTempName());
 		$thumbnail->save($smallFile);
 		
-		$thumbnail = new sfThumbnail(700, 500, true, true, 75, 'sfGDAdapter');
+		/*		  
+		$thumbnail = new sfThumbnail(20, 20, false, true, 90, '');
 		$thumbnail->loadFile($this->getTempName());
-		$thumbnail->save($file);
+		$thumbnail->save($msmallFile);
+		*/
 		
-		$thumbnail = new sfThumbnail(400, 300, true, true, 75, 'sfGDAdapter');
+		$thumbnail = new sfThumbnail(680, 500, true, true, 90, 'sfGDAdapter');
 		$thumbnail->loadFile($this->getTempName());
-		$thumbnail->save($hoverFile);
+		$thumbnail->save($file);		
 		
-		$thumbnail = new sfThumbnail(220, 150, true, true, 75, 'sfGDAdapter');
+		$thumbnail = new sfThumbnail(220, 150, true, true, 90, 'sfGDAdapter');
 		$thumbnail->loadFile($this->getTempName());
 		$thumbnail->save($mediumFile);
 

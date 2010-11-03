@@ -26,6 +26,7 @@ class imagesgalleryActions extends sfActions
   public function executeNew(sfWebRequest $request)
   {
     $this->form = new SfImagesForm();
+    $this->form->setDefault('user_id', 1);
   }
 
   public function executeCreate(sfWebRequest $request)
@@ -33,7 +34,7 @@ class imagesgalleryActions extends sfActions
     $this->forward404Unless($request->isMethod(sfRequest::POST));
 
     $this->form = new SfImagesForm();
-
+    
     $this->processForm($request, $this->form);
 
     $this->setTemplate('new');

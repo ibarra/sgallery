@@ -19,6 +19,7 @@
     </tfoot>
     <tbody>
       <?php echo $form ?>
+      <?php echo $form->renderHiddenFields();?>
     </tbody>
   </table>
 </form>

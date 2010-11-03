@@ -12,4 +12,12 @@
  */
 class SfImages extends BaseSfImages
 {
+    public function save(Doctrine_Connection $conn = null)
+    {
+        if ($this->isNew())
+        {
+          $this->setCreatedAt(date('Y-m-d h:i:s'));
+        }
+        return parent::save($conn);
+    }
 }
