@@ -12,14 +12,16 @@ class SfImagesForm extends BaseSfImagesForm
 {
   public function configure()
   {
-      unset($this['created_at'],$this['updated_at'],$this['order']);
+      unset($this['created_at'],$this['updated_at'],$this['order'], $this['user_id']);
 
        $this->setWidgets(array(
       'id_image'    => new sfWidgetFormInputHidden(),
-      'gallery_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SfGallery'), 'add_empty' => false)),
-      'user_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SfGuardUser'), 'add_empty' => false)),
-      'description' => new sfWidgetFormTextarea(),
-      'name'        => new sfWidgetFormTextarea(),
+    /**
+     * fix me, add only my gallery 
+     */
+           'gallery_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SfGallery'), 'add_empty' => false)),
+      'description' => new sfWidgetFormInput(),
+      'name'        => new sfWidgetFormInput(),
 
     ));
 
