@@ -1,0 +1,73 @@
+Nov 02 15:39:01 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 02 15:39:01 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 02 15:39:01 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Nov 02 15:39:01 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 02 15:39:01 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 02 15:39:01 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Nov 02 15:39:01 symfony [info] {sfPHPView} Render "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/indexSuccess.php"
+Nov 02 15:39:01 symfony [info] {sfPHPView} Decorate content with "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Nov 02 15:39:01 symfony [info] {sfPHPView} Render "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Nov 02 15:39:01 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 02 15:39:01 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 02 15:39:01 symfony [info] {sfWebDebugLogger} Configuration 105.98 ms (9)
+Nov 02 15:39:01 symfony [info] {sfWebDebugLogger} Factories 80.16 ms (1)
+Nov 02 15:39:01 symfony [info] {sfWebDebugLogger} Action "default/index" 0.08 ms (1)
+Nov 02 15:39:01 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 6.20 ms (1)
+Nov 02 15:39:01 symfony [info] {sfWebResponse} Send content (29358 o)
+Nov 02 15:50:38 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 02 15:50:38 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 02 15:50:38 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Nov 02 15:50:38 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 02 15:50:38 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 02 15:50:38 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Nov 02 15:50:38 symfony [info] {sfPHPView} Render "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/indexSuccess.php"
+Nov 02 15:50:38 symfony [info] {sfPHPView} Decorate content with "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Nov 02 15:50:38 symfony [info] {sfPHPView} Render "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Nov 02 15:50:38 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 02 15:50:38 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 02 15:50:38 symfony [info] {sfWebDebugLogger} Configuration 1.37 ms (9)
+Nov 02 15:50:38 symfony [info] {sfWebDebugLogger} Factories 10.10 ms (1)
+Nov 02 15:50:38 symfony [info] {sfWebDebugLogger} Action "default/index" 0.08 ms (1)
+Nov 02 15:50:38 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 3.30 ms (1)
+Nov 02 15:50:38 symfony [info] {sfWebResponse} Send content (29583 o)
+Nov 02 15:51:47 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 02 15:51:47 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 02 15:51:47 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Nov 02 15:51:47 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 02 15:51:47 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 02 15:51:47 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Nov 02 15:51:47 symfony [info] {sfPHPView} Render "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/indexSuccess.php"
+Nov 02 15:51:47 symfony [info] {sfPHPView} Decorate content with "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Nov 02 15:51:47 symfony [info] {sfPHPView} Render "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Nov 02 15:51:47 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 02 15:51:47 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 02 15:51:47 symfony [info] {sfWebDebugLogger} Configuration 1.33 ms (9)
+Nov 02 15:51:47 symfony [info] {sfWebDebugLogger} Factories 10.65 ms (1)
+Nov 02 15:51:47 symfony [info] {sfWebDebugLogger} Action "default/index" 0.09 ms (1)
+Nov 02 15:51:47 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 3.60 ms (1)
+Nov 02 15:51:47 symfony [info] {sfWebResponse} Send content (29583 o)
+Nov 03 13:58:19 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 03 13:58:19 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 03 13:58:19 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Nov 03 13:58:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 03 13:58:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 03 13:58:19 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Nov 03 13:58:19 symfony [info] {sfPHPView} Render "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/indexSuccess.php"
+Nov 03 13:58:19 symfony [info] {sfPHPView} Decorate content with "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Nov 03 13:58:19 symfony [info] {sfPHPView} Render "/home/mic/code/Projects/php/sgallery/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Nov 03 13:58:19 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 03 13:58:19 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 03 13:58:19 symfony [info] {sfWebDebugLogger} Configuration 471.20 ms (9)
+Nov 03 13:58:19 symfony [info] {sfWebDebugLogger} Factories 77.30 ms (1)
+Nov 03 13:58:19 symfony [info] {sfWebDebugLogger} Action "default/index" 0.08 ms (1)
+Nov 03 13:58:19 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 7.85 ms (1)
+Nov 03 13:58:19 symfony [info] {sfWebResponse} Send content (29555 o)
+Nov 03 13:58:21 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+Nov 03 13:58:21 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+Nov 03 13:58:21 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /gallery with parameters array (  'module' => 'gallery',  'action' => 'index',)
+Nov 03 13:58:21 symfony [info] {sfFrontWebController} Action "gallery/index" does not exist
+Nov 03 13:58:21 symfony [err] {sfError404Exception} Action "gallery/index" does not exist.
+Nov 03 13:58:21 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Nov 03 13:58:21 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 03 13:58:21 symfony [info] {sfWebDebugLogger} Configuration 1.04 ms (5)
+Nov 03 13:58:21 symfony [info] {sfWebDebugLogger} Factories 10.36 ms (1)
