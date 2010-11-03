@@ -12,5 +12,27 @@ class SfImagesForm extends BaseSfImagesForm
 {
   public function configure()
   {
+      unset($this['created_at'],$this['updated_at'],$this['order']);
+
+       $this->setWidgets(array(
+      'id_image'    => new sfWidgetFormInputHidden(),
+      'gallery_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SfGallery'), 'add_empty' => false)),
+      'user_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SfGuardUser'), 'add_empty' => false)),
+      'description' => new sfWidgetFormTextarea(),
+      'name'        => new sfWidgetFormTextarea(),
+
+    ));
+
+    $this->setValidators(array(
+      'id_image'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id_image')), 'empty_value' => $this->getObject()->get('id_image'), 'required' => false)),
+      'gallery_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('SfGallery'))),
+      'user_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('SfGuardUser'))),
+      'description' => new sfValidatorString(array('required' => false)),
+      'name' 		=> new sfValidatorFile(array('required'   => true,'mime_types' => 'web_images',
+      						'path' => sfConfig::get('sf_upload_dir').'/gallery', 'validated_file_class' => 'sfResizedFile',)),
+    ));
+
+    $this->widgetSchema->setNameFormat('sf_images[%s]');
+
   }
 }
