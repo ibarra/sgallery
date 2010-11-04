@@ -2,8 +2,6 @@
 -- PostgreSQL database dump
 --
 
--- Started on 2010-11-03 15:41:13 PDT
-
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = off;
@@ -18,8 +16,6 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 1552 (class 1259 OID 26587)
--- Dependencies: 1843 3
 -- Name: sf_comments; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -40,8 +36,6 @@ CREATE TABLE sf_comments (
 ALTER TABLE public.sf_comments OWNER TO mic;
 
 --
--- TOC entry 1551 (class 1259 OID 26585)
--- Dependencies: 1552 3
 -- Name: sf_comments_id_comments_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -56,8 +50,6 @@ CREATE SEQUENCE sf_comments_id_comments_seq
 ALTER TABLE public.sf_comments_id_comments_seq OWNER TO mic;
 
 --
--- TOC entry 1909 (class 0 OID 0)
--- Dependencies: 1551
 -- Name: sf_comments_id_comments_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -65,8 +57,6 @@ ALTER SEQUENCE sf_comments_id_comments_seq OWNED BY sf_comments.id_comments;
 
 
 --
--- TOC entry 1910 (class 0 OID 0)
--- Dependencies: 1551
 -- Name: sf_comments_id_comments_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -74,8 +64,6 @@ SELECT pg_catalog.setval('sf_comments_id_comments_seq', 1, false);
 
 
 --
--- TOC entry 1548 (class 1259 OID 26547)
--- Dependencies: 3
 -- Name: sf_gallery; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -92,8 +80,6 @@ CREATE TABLE sf_gallery (
 ALTER TABLE public.sf_gallery OWNER TO mic;
 
 --
--- TOC entry 1547 (class 1259 OID 26545)
--- Dependencies: 1548 3
 -- Name: sf_gallery_id_gallery_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -108,8 +94,6 @@ CREATE SEQUENCE sf_gallery_id_gallery_seq
 ALTER TABLE public.sf_gallery_id_gallery_seq OWNER TO mic;
 
 --
--- TOC entry 1911 (class 0 OID 0)
--- Dependencies: 1547
 -- Name: sf_gallery_id_gallery_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -117,8 +101,6 @@ ALTER SEQUENCE sf_gallery_id_gallery_seq OWNED BY sf_gallery.id_gallery;
 
 
 --
--- TOC entry 1912 (class 0 OID 0)
--- Dependencies: 1547
 -- Name: sf_gallery_id_gallery_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -126,8 +108,6 @@ SELECT pg_catalog.setval('sf_gallery_id_gallery_seq', 2, true);
 
 
 --
--- TOC entry 1554 (class 1259 OID 26604)
--- Dependencies: 3
 -- Name: sf_gallery_members; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -141,8 +121,6 @@ CREATE TABLE sf_gallery_members (
 ALTER TABLE public.sf_gallery_members OWNER TO mic;
 
 --
--- TOC entry 1553 (class 1259 OID 26602)
--- Dependencies: 1554 3
 -- Name: sf_gallery_members_id_members_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -157,8 +135,6 @@ CREATE SEQUENCE sf_gallery_members_id_members_seq
 ALTER TABLE public.sf_gallery_members_id_members_seq OWNER TO mic;
 
 --
--- TOC entry 1913 (class 0 OID 0)
--- Dependencies: 1553
 -- Name: sf_gallery_members_id_members_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -166,8 +142,6 @@ ALTER SEQUENCE sf_gallery_members_id_members_seq OWNED BY sf_gallery_members.id_
 
 
 --
--- TOC entry 1914 (class 0 OID 0)
--- Dependencies: 1553
 -- Name: sf_gallery_members_id_members_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -175,8 +149,6 @@ SELECT pg_catalog.setval('sf_gallery_members_id_members_seq', 4, true);
 
 
 --
--- TOC entry 1542 (class 1259 OID 26445)
--- Dependencies: 3
 -- Name: sf_guard_forgot_password; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -193,8 +165,6 @@ CREATE TABLE sf_guard_forgot_password (
 ALTER TABLE public.sf_guard_forgot_password OWNER TO mic;
 
 --
--- TOC entry 1541 (class 1259 OID 26443)
--- Dependencies: 1542 3
 -- Name: sf_guard_forgot_password_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -209,8 +179,6 @@ CREATE SEQUENCE sf_guard_forgot_password_id_seq
 ALTER TABLE public.sf_guard_forgot_password_id_seq OWNER TO mic;
 
 --
--- TOC entry 1915 (class 0 OID 0)
--- Dependencies: 1541
 -- Name: sf_guard_forgot_password_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -218,8 +186,6 @@ ALTER SEQUENCE sf_guard_forgot_password_id_seq OWNED BY sf_guard_forgot_password
 
 
 --
--- TOC entry 1916 (class 0 OID 0)
--- Dependencies: 1541
 -- Name: sf_guard_forgot_password_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -227,8 +193,6 @@ SELECT pg_catalog.setval('sf_guard_forgot_password_id_seq', 1, false);
 
 
 --
--- TOC entry 1531 (class 1259 OID 26378)
--- Dependencies: 3
 -- Name: sf_guard_group; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -244,8 +208,6 @@ CREATE TABLE sf_guard_group (
 ALTER TABLE public.sf_guard_group OWNER TO mic;
 
 --
--- TOC entry 1530 (class 1259 OID 26376)
--- Dependencies: 1531 3
 -- Name: sf_guard_group_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -260,8 +222,6 @@ CREATE SEQUENCE sf_guard_group_id_seq
 ALTER TABLE public.sf_guard_group_id_seq OWNER TO mic;
 
 --
--- TOC entry 1917 (class 0 OID 0)
--- Dependencies: 1530
 -- Name: sf_guard_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -269,8 +229,6 @@ ALTER SEQUENCE sf_guard_group_id_seq OWNED BY sf_guard_group.id;
 
 
 --
--- TOC entry 1918 (class 0 OID 0)
--- Dependencies: 1530
 -- Name: sf_guard_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -278,8 +236,6 @@ SELECT pg_catalog.setval('sf_guard_group_id_seq', 1, true);
 
 
 --
--- TOC entry 1535 (class 1259 OID 26402)
--- Dependencies: 3
 -- Name: sf_guard_group_permission; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -294,8 +250,6 @@ CREATE TABLE sf_guard_group_permission (
 ALTER TABLE public.sf_guard_group_permission OWNER TO mic;
 
 --
--- TOC entry 1539 (class 1259 OID 26427)
--- Dependencies: 3
 -- Name: sf_guard_permission; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -311,8 +265,6 @@ CREATE TABLE sf_guard_permission (
 ALTER TABLE public.sf_guard_permission OWNER TO mic;
 
 --
--- TOC entry 1538 (class 1259 OID 26425)
--- Dependencies: 1539 3
 -- Name: sf_guard_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -327,8 +279,6 @@ CREATE SEQUENCE sf_guard_permission_id_seq
 ALTER TABLE public.sf_guard_permission_id_seq OWNER TO mic;
 
 --
--- TOC entry 1919 (class 0 OID 0)
--- Dependencies: 1538
 -- Name: sf_guard_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -336,8 +286,6 @@ ALTER SEQUENCE sf_guard_permission_id_seq OWNED BY sf_guard_permission.id;
 
 
 --
--- TOC entry 1920 (class 0 OID 0)
--- Dependencies: 1538
 -- Name: sf_guard_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -345,8 +293,6 @@ SELECT pg_catalog.setval('sf_guard_permission_id_seq', 1, true);
 
 
 --
--- TOC entry 1533 (class 1259 OID 26391)
--- Dependencies: 3
 -- Name: sf_guard_remember_key; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -363,8 +309,6 @@ CREATE TABLE sf_guard_remember_key (
 ALTER TABLE public.sf_guard_remember_key OWNER TO mic;
 
 --
--- TOC entry 1532 (class 1259 OID 26389)
--- Dependencies: 1533 3
 -- Name: sf_guard_remember_key_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -379,8 +323,6 @@ CREATE SEQUENCE sf_guard_remember_key_id_seq
 ALTER TABLE public.sf_guard_remember_key_id_seq OWNER TO mic;
 
 --
--- TOC entry 1921 (class 0 OID 0)
--- Dependencies: 1532
 -- Name: sf_guard_remember_key_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -388,8 +330,6 @@ ALTER SEQUENCE sf_guard_remember_key_id_seq OWNED BY sf_guard_remember_key.id;
 
 
 --
--- TOC entry 1922 (class 0 OID 0)
--- Dependencies: 1532
 -- Name: sf_guard_remember_key_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -397,8 +337,6 @@ SELECT pg_catalog.setval('sf_guard_remember_key_id_seq', 1, false);
 
 
 --
--- TOC entry 1537 (class 1259 OID 26409)
--- Dependencies: 1835 1836 1837 3
 -- Name: sf_guard_user; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -422,8 +360,6 @@ CREATE TABLE sf_guard_user (
 ALTER TABLE public.sf_guard_user OWNER TO mic;
 
 --
--- TOC entry 1540 (class 1259 OID 26438)
--- Dependencies: 3
 -- Name: sf_guard_user_group; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -438,8 +374,6 @@ CREATE TABLE sf_guard_user_group (
 ALTER TABLE public.sf_guard_user_group OWNER TO mic;
 
 --
--- TOC entry 1536 (class 1259 OID 26407)
--- Dependencies: 3 1537
 -- Name: sf_guard_user_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -454,8 +388,6 @@ CREATE SEQUENCE sf_guard_user_id_seq
 ALTER TABLE public.sf_guard_user_id_seq OWNER TO mic;
 
 --
--- TOC entry 1923 (class 0 OID 0)
--- Dependencies: 1536
 -- Name: sf_guard_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -463,8 +395,6 @@ ALTER SEQUENCE sf_guard_user_id_seq OWNED BY sf_guard_user.id;
 
 
 --
--- TOC entry 1924 (class 0 OID 0)
--- Dependencies: 1536
 -- Name: sf_guard_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -472,8 +402,6 @@ SELECT pg_catalog.setval('sf_guard_user_id_seq', 4, true);
 
 
 --
--- TOC entry 1534 (class 1259 OID 26397)
--- Dependencies: 3
 -- Name: sf_guard_user_permission; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -488,8 +416,6 @@ CREATE TABLE sf_guard_user_permission (
 ALTER TABLE public.sf_guard_user_permission OWNER TO mic;
 
 --
--- TOC entry 1550 (class 1259 OID 26563)
--- Dependencies: 3
 -- Name: sf_images; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -508,8 +434,6 @@ CREATE TABLE sf_images (
 ALTER TABLE public.sf_images OWNER TO mic;
 
 --
--- TOC entry 1549 (class 1259 OID 26561)
--- Dependencies: 1550 3
 -- Name: sf_images_id_image_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -524,8 +448,6 @@ CREATE SEQUENCE sf_images_id_image_seq
 ALTER TABLE public.sf_images_id_image_seq OWNER TO mic;
 
 --
--- TOC entry 1925 (class 0 OID 0)
--- Dependencies: 1549
 -- Name: sf_images_id_image_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
 --
 
@@ -533,8 +455,6 @@ ALTER SEQUENCE sf_images_id_image_seq OWNED BY sf_images.id_image;
 
 
 --
--- TOC entry 1926 (class 0 OID 0)
--- Dependencies: 1549
 -- Name: sf_images_id_image_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -542,8 +462,6 @@ SELECT pg_catalog.setval('sf_images_id_image_seq', 1, true);
 
 
 --
--- TOC entry 1543 (class 1259 OID 26480)
--- Dependencies: 3
 -- Name: sp_album_id_album_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -558,8 +476,6 @@ CREATE SEQUENCE sp_album_id_album_seq
 ALTER TABLE public.sp_album_id_album_seq OWNER TO mic;
 
 --
--- TOC entry 1927 (class 0 OID 0)
--- Dependencies: 1543
 -- Name: sp_album_id_album_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -567,8 +483,6 @@ SELECT pg_catalog.setval('sp_album_id_album_seq', 1, false);
 
 
 --
--- TOC entry 1544 (class 1259 OID 26482)
--- Dependencies: 3
 -- Name: sp_category_id_category_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -583,8 +497,6 @@ CREATE SEQUENCE sp_category_id_category_seq
 ALTER TABLE public.sp_category_id_category_seq OWNER TO mic;
 
 --
--- TOC entry 1928 (class 0 OID 0)
--- Dependencies: 1544
 -- Name: sp_category_id_category_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -592,8 +504,6 @@ SELECT pg_catalog.setval('sp_category_id_category_seq', 1, false);
 
 
 --
--- TOC entry 1545 (class 1259 OID 26484)
--- Dependencies: 3
 -- Name: sp_level_id_level_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -608,8 +518,6 @@ CREATE SEQUENCE sp_level_id_level_seq
 ALTER TABLE public.sp_level_id_level_seq OWNER TO mic;
 
 --
--- TOC entry 1929 (class 0 OID 0)
--- Dependencies: 1545
 -- Name: sp_level_id_level_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -617,8 +525,6 @@ SELECT pg_catalog.setval('sp_level_id_level_seq', 1, false);
 
 
 --
--- TOC entry 1546 (class 1259 OID 26486)
--- Dependencies: 3
 -- Name: sp_user_id_user_seq; Type: SEQUENCE; Schema: public; Owner: mic
 --
 
@@ -633,8 +539,6 @@ CREATE SEQUENCE sp_user_id_user_seq
 ALTER TABLE public.sp_user_id_user_seq OWNER TO mic;
 
 --
--- TOC entry 1930 (class 0 OID 0)
--- Dependencies: 1546
 -- Name: sp_user_id_user_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
 --
 
@@ -642,8 +546,6 @@ SELECT pg_catalog.setval('sp_user_id_user_seq', 1, false);
 
 
 --
--- TOC entry 1842 (class 2604 OID 26590)
--- Dependencies: 1551 1552 1552
 -- Name: id_comments; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -651,8 +553,6 @@ ALTER TABLE sf_comments ALTER COLUMN id_comments SET DEFAULT nextval('sf_comment
 
 
 --
--- TOC entry 1840 (class 2604 OID 26550)
--- Dependencies: 1547 1548 1548
 -- Name: id_gallery; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -660,8 +560,6 @@ ALTER TABLE sf_gallery ALTER COLUMN id_gallery SET DEFAULT nextval('sf_gallery_i
 
 
 --
--- TOC entry 1844 (class 2604 OID 26607)
--- Dependencies: 1553 1554 1554
 -- Name: id_members; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -669,8 +567,6 @@ ALTER TABLE sf_gallery_members ALTER COLUMN id_members SET DEFAULT nextval('sf_g
 
 
 --
--- TOC entry 1839 (class 2604 OID 26448)
--- Dependencies: 1542 1541 1542
 -- Name: id; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -678,8 +574,6 @@ ALTER TABLE sf_guard_forgot_password ALTER COLUMN id SET DEFAULT nextval('sf_gua
 
 
 --
--- TOC entry 1832 (class 2604 OID 26381)
--- Dependencies: 1531 1530 1531
 -- Name: id; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -687,8 +581,6 @@ ALTER TABLE sf_guard_group ALTER COLUMN id SET DEFAULT nextval('sf_guard_group_i
 
 
 --
--- TOC entry 1838 (class 2604 OID 26430)
--- Dependencies: 1539 1538 1539
 -- Name: id; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -696,8 +588,6 @@ ALTER TABLE sf_guard_permission ALTER COLUMN id SET DEFAULT nextval('sf_guard_pe
 
 
 --
--- TOC entry 1833 (class 2604 OID 26394)
--- Dependencies: 1532 1533 1533
 -- Name: id; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -705,8 +595,6 @@ ALTER TABLE sf_guard_remember_key ALTER COLUMN id SET DEFAULT nextval('sf_guard_
 
 
 --
--- TOC entry 1834 (class 2604 OID 26412)
--- Dependencies: 1536 1537 1537
 -- Name: id; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -714,8 +602,6 @@ ALTER TABLE sf_guard_user ALTER COLUMN id SET DEFAULT nextval('sf_guard_user_id_
 
 
 --
--- TOC entry 1841 (class 2604 OID 26566)
--- Dependencies: 1549 1550 1550
 -- Name: id_image; Type: DEFAULT; Schema: public; Owner: mic
 --
 
@@ -723,8 +609,6 @@ ALTER TABLE sf_images ALTER COLUMN id_image SET DEFAULT nextval('sf_images_id_im
 
 
 --
--- TOC entry 1902 (class 0 OID 26587)
--- Dependencies: 1552
 -- Data for Name: sf_comments; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -733,8 +617,6 @@ COPY sf_comments (id_comments, image_id, "user", site, email, message, created_a
 
 
 --
--- TOC entry 1900 (class 0 OID 26547)
--- Dependencies: 1548
 -- Data for Name: sf_gallery; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -745,8 +627,6 @@ COPY sf_gallery (id_gallery, title, description, user_id, created_at, updated_at
 
 
 --
--- TOC entry 1903 (class 0 OID 26604)
--- Dependencies: 1554
 -- Data for Name: sf_gallery_members; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -759,8 +639,6 @@ COPY sf_gallery_members (id_members, gallery_id, user_id) FROM stdin;
 
 
 --
--- TOC entry 1899 (class 0 OID 26445)
--- Dependencies: 1542
 -- Data for Name: sf_guard_forgot_password; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -769,8 +647,6 @@ COPY sf_guard_forgot_password (id, user_id, unique_key, expires_at, created_at, 
 
 
 --
--- TOC entry 1892 (class 0 OID 26378)
--- Dependencies: 1531
 -- Data for Name: sf_guard_group; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -780,8 +656,6 @@ COPY sf_guard_group (id, name, description, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 1895 (class 0 OID 26402)
--- Dependencies: 1535
 -- Data for Name: sf_guard_group_permission; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -791,8 +665,6 @@ COPY sf_guard_group_permission (group_id, permission_id, created_at, updated_at)
 
 
 --
--- TOC entry 1897 (class 0 OID 26427)
--- Dependencies: 1539
 -- Data for Name: sf_guard_permission; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -802,8 +674,6 @@ COPY sf_guard_permission (id, name, description, created_at, updated_at) FROM st
 
 
 --
--- TOC entry 1893 (class 0 OID 26391)
--- Dependencies: 1533
 -- Data for Name: sf_guard_remember_key; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -812,8 +682,6 @@ COPY sf_guard_remember_key (id, user_id, remember_key, ip_address, created_at, u
 
 
 --
--- TOC entry 1896 (class 0 OID 26409)
--- Dependencies: 1537
 -- Data for Name: sf_guard_user; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -824,8 +692,6 @@ COPY sf_guard_user (id, first_name, last_name, email_address, username, algorith
 
 
 --
--- TOC entry 1898 (class 0 OID 26438)
--- Dependencies: 1540
 -- Data for Name: sf_guard_user_group; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -835,8 +701,6 @@ COPY sf_guard_user_group (user_id, group_id, created_at, updated_at) FROM stdin;
 
 
 --
--- TOC entry 1894 (class 0 OID 26397)
--- Dependencies: 1534
 -- Data for Name: sf_guard_user_permission; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -845,8 +709,6 @@ COPY sf_guard_user_permission (user_id, permission_id, created_at, updated_at) F
 
 
 --
--- TOC entry 1901 (class 0 OID 26563)
--- Dependencies: 1550
 -- Data for Name: sf_images; Type: TABLE DATA; Schema: public; Owner: mic
 --
 
@@ -856,8 +718,6 @@ COPY sf_images (id_image, gallery_id, user_id, description, "order", name, creat
 
 
 --
--- TOC entry 1875 (class 2606 OID 26596)
--- Dependencies: 1552 1552
 -- Name: sf_comments_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -866,8 +726,6 @@ ALTER TABLE ONLY sf_comments
 
 
 --
--- TOC entry 1877 (class 2606 OID 26609)
--- Dependencies: 1554 1554
 -- Name: sf_gallery_members_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -876,8 +734,6 @@ ALTER TABLE ONLY sf_gallery_members
 
 
 --
--- TOC entry 1871 (class 2606 OID 26555)
--- Dependencies: 1548 1548
 -- Name: sf_gallery_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -886,8 +742,6 @@ ALTER TABLE ONLY sf_gallery
 
 
 --
--- TOC entry 1869 (class 2606 OID 26450)
--- Dependencies: 1542 1542
 -- Name: sf_guard_forgot_password_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -896,8 +750,6 @@ ALTER TABLE ONLY sf_guard_forgot_password
 
 
 --
--- TOC entry 1846 (class 2606 OID 26388)
--- Dependencies: 1531 1531
 -- Name: sf_guard_group_name_key; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -906,8 +758,6 @@ ALTER TABLE ONLY sf_guard_group
 
 
 --
--- TOC entry 1854 (class 2606 OID 26406)
--- Dependencies: 1535 1535 1535
 -- Name: sf_guard_group_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -916,8 +766,6 @@ ALTER TABLE ONLY sf_guard_group_permission
 
 
 --
--- TOC entry 1848 (class 2606 OID 26386)
--- Dependencies: 1531 1531
 -- Name: sf_guard_group_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -926,8 +774,6 @@ ALTER TABLE ONLY sf_guard_group
 
 
 --
--- TOC entry 1863 (class 2606 OID 26437)
--- Dependencies: 1539 1539
 -- Name: sf_guard_permission_name_key; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -936,8 +782,6 @@ ALTER TABLE ONLY sf_guard_permission
 
 
 --
--- TOC entry 1865 (class 2606 OID 26435)
--- Dependencies: 1539 1539
 -- Name: sf_guard_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -946,8 +790,6 @@ ALTER TABLE ONLY sf_guard_permission
 
 
 --
--- TOC entry 1850 (class 2606 OID 26396)
--- Dependencies: 1533 1533
 -- Name: sf_guard_remember_key_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -956,8 +798,6 @@ ALTER TABLE ONLY sf_guard_remember_key
 
 
 --
--- TOC entry 1857 (class 2606 OID 26422)
--- Dependencies: 1537 1537
 -- Name: sf_guard_user_email_address_key; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -966,8 +806,6 @@ ALTER TABLE ONLY sf_guard_user
 
 
 --
--- TOC entry 1867 (class 2606 OID 26442)
--- Dependencies: 1540 1540 1540
 -- Name: sf_guard_user_group_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -976,8 +814,6 @@ ALTER TABLE ONLY sf_guard_user_group
 
 
 --
--- TOC entry 1852 (class 2606 OID 26401)
--- Dependencies: 1534 1534 1534
 -- Name: sf_guard_user_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -986,8 +822,6 @@ ALTER TABLE ONLY sf_guard_user_permission
 
 
 --
--- TOC entry 1859 (class 2606 OID 26420)
--- Dependencies: 1537 1537
 -- Name: sf_guard_user_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -996,8 +830,6 @@ ALTER TABLE ONLY sf_guard_user
 
 
 --
--- TOC entry 1861 (class 2606 OID 26424)
--- Dependencies: 1537 1537
 -- Name: sf_guard_user_username_key; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -1006,8 +838,6 @@ ALTER TABLE ONLY sf_guard_user
 
 
 --
--- TOC entry 1873 (class 2606 OID 26568)
--- Dependencies: 1550 1550
 -- Name: sf_images_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -1016,8 +846,6 @@ ALTER TABLE ONLY sf_images
 
 
 --
--- TOC entry 1855 (class 1259 OID 26488)
--- Dependencies: 1537
 -- Name: is_active_idx; Type: INDEX; Schema: public; Owner: mic; Tablespace: 
 --
 
@@ -1025,8 +853,6 @@ CREATE INDEX is_active_idx ON sf_guard_user USING btree (is_active);
 
 
 --
--- TOC entry 1889 (class 2606 OID 26597)
--- Dependencies: 1552 1872 1550
 -- Name: sf_comments_image_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1035,8 +861,6 @@ ALTER TABLE ONLY sf_comments
 
 
 --
--- TOC entry 1891 (class 2606 OID 26615)
--- Dependencies: 1870 1548 1554
 -- Name: sf_gallery_members_gallery_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1045,8 +869,6 @@ ALTER TABLE ONLY sf_gallery_members
 
 
 --
--- TOC entry 1890 (class 2606 OID 26610)
--- Dependencies: 1537 1858 1554
 -- Name: sf_gallery_members_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1055,8 +877,6 @@ ALTER TABLE ONLY sf_gallery_members
 
 
 --
--- TOC entry 1886 (class 2606 OID 26556)
--- Dependencies: 1548 1858 1537
 -- Name: sf_gallery_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1065,8 +885,6 @@ ALTER TABLE ONLY sf_gallery
 
 
 --
--- TOC entry 1885 (class 2606 OID 26524)
--- Dependencies: 1537 1542 1858
 -- Name: sf_guard_forgot_password_user_id_sf_guard_user_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1075,8 +893,6 @@ ALTER TABLE ONLY sf_guard_forgot_password
 
 
 --
--- TOC entry 1882 (class 2606 OID 26509)
--- Dependencies: 1531 1847 1535
 -- Name: sf_guard_group_permission_group_id_sf_guard_group_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1085,8 +901,6 @@ ALTER TABLE ONLY sf_guard_group_permission
 
 
 --
--- TOC entry 1881 (class 2606 OID 26504)
--- Dependencies: 1864 1539 1535
 -- Name: sf_guard_group_permission_permission_id_sf_guard_permission_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1095,8 +909,6 @@ ALTER TABLE ONLY sf_guard_group_permission
 
 
 --
--- TOC entry 1878 (class 2606 OID 26489)
--- Dependencies: 1533 1537 1858
 -- Name: sf_guard_remember_key_user_id_sf_guard_user_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1105,8 +917,6 @@ ALTER TABLE ONLY sf_guard_remember_key
 
 
 --
--- TOC entry 1884 (class 2606 OID 26519)
--- Dependencies: 1531 1847 1540
 -- Name: sf_guard_user_group_group_id_sf_guard_group_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1115,8 +925,6 @@ ALTER TABLE ONLY sf_guard_user_group
 
 
 --
--- TOC entry 1883 (class 2606 OID 26514)
--- Dependencies: 1537 1858 1540
 -- Name: sf_guard_user_group_user_id_sf_guard_user_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1125,8 +933,6 @@ ALTER TABLE ONLY sf_guard_user_group
 
 
 --
--- TOC entry 1880 (class 2606 OID 26499)
--- Dependencies: 1539 1534 1864
 -- Name: sf_guard_user_permission_permission_id_sf_guard_permission_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1135,8 +941,6 @@ ALTER TABLE ONLY sf_guard_user_permission
 
 
 --
--- TOC entry 1879 (class 2606 OID 26494)
--- Dependencies: 1858 1534 1537
 -- Name: sf_guard_user_permission_user_id_sf_guard_user_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1145,8 +949,6 @@ ALTER TABLE ONLY sf_guard_user_permission
 
 
 --
--- TOC entry 1887 (class 2606 OID 26569)
--- Dependencies: 1550 1548 1870
 -- Name: sf_images_gallery_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1155,8 +957,6 @@ ALTER TABLE ONLY sf_images
 
 
 --
--- TOC entry 1888 (class 2606 OID 26574)
--- Dependencies: 1537 1550 1858
 -- Name: sf_images_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
 --
 
@@ -1165,8 +965,6 @@ ALTER TABLE ONLY sf_images
 
 
 --
--- TOC entry 1908 (class 0 OID 0)
--- Dependencies: 3
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
@@ -1175,8 +973,6 @@ REVOKE ALL ON SCHEMA public FROM postgres;
 GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
-
--- Completed on 2010-11-03 15:41:13 PDT
 
 --
 -- PostgreSQL database dump complete
