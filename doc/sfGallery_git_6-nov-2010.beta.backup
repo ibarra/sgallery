@@ -1,0 +1,980 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET escape_string_warning = off;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: sf_comments; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_comments (
+    id_comments integer NOT NULL,
+    image_id integer NOT NULL,
+    "user" character(30) NOT NULL,
+    site character varying(100),
+    email character varying(80) NOT NULL,
+    message text NOT NULL,
+    created_at date,
+    updated_at date,
+    ip character(20) NOT NULL,
+    is_valid boolean DEFAULT false NOT NULL
+);
+
+
+ALTER TABLE public.sf_comments OWNER TO mic;
+
+--
+-- Name: sf_comments_id_comments_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_comments_id_comments_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_comments_id_comments_seq OWNER TO mic;
+
+--
+-- Name: sf_comments_id_comments_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_comments_id_comments_seq OWNED BY sf_comments.id_comments;
+
+
+--
+-- Name: sf_comments_id_comments_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_comments_id_comments_seq', 1, false);
+
+
+--
+-- Name: sf_gallery; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_gallery (
+    id_gallery integer NOT NULL,
+    title character varying(100) NOT NULL,
+    description text,
+    user_id integer NOT NULL,
+    created_at date,
+    updated_at date
+);
+
+
+ALTER TABLE public.sf_gallery OWNER TO mic;
+
+--
+-- Name: sf_gallery_id_gallery_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_gallery_id_gallery_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_gallery_id_gallery_seq OWNER TO mic;
+
+--
+-- Name: sf_gallery_id_gallery_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_gallery_id_gallery_seq OWNED BY sf_gallery.id_gallery;
+
+
+--
+-- Name: sf_gallery_id_gallery_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_gallery_id_gallery_seq', 2, true);
+
+
+--
+-- Name: sf_gallery_members; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_gallery_members (
+    id_members integer NOT NULL,
+    gallery_id integer NOT NULL,
+    user_id integer NOT NULL
+);
+
+
+ALTER TABLE public.sf_gallery_members OWNER TO mic;
+
+--
+-- Name: sf_gallery_members_id_members_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_gallery_members_id_members_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_gallery_members_id_members_seq OWNER TO mic;
+
+--
+-- Name: sf_gallery_members_id_members_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_gallery_members_id_members_seq OWNED BY sf_gallery_members.id_members;
+
+
+--
+-- Name: sf_gallery_members_id_members_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_gallery_members_id_members_seq', 4, true);
+
+
+--
+-- Name: sf_guard_forgot_password; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_guard_forgot_password (
+    id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    unique_key character varying(255),
+    expires_at timestamp without time zone NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.sf_guard_forgot_password OWNER TO mic;
+
+--
+-- Name: sf_guard_forgot_password_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_guard_forgot_password_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_guard_forgot_password_id_seq OWNER TO mic;
+
+--
+-- Name: sf_guard_forgot_password_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_guard_forgot_password_id_seq OWNED BY sf_guard_forgot_password.id;
+
+
+--
+-- Name: sf_guard_forgot_password_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_guard_forgot_password_id_seq', 1, false);
+
+
+--
+-- Name: sf_guard_group; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_guard_group (
+    id bigint NOT NULL,
+    name character varying(255),
+    description character varying(1000),
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.sf_guard_group OWNER TO mic;
+
+--
+-- Name: sf_guard_group_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_guard_group_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_guard_group_id_seq OWNER TO mic;
+
+--
+-- Name: sf_guard_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_guard_group_id_seq OWNED BY sf_guard_group.id;
+
+
+--
+-- Name: sf_guard_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_guard_group_id_seq', 1, true);
+
+
+--
+-- Name: sf_guard_group_permission; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_guard_group_permission (
+    group_id bigint NOT NULL,
+    permission_id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.sf_guard_group_permission OWNER TO mic;
+
+--
+-- Name: sf_guard_permission; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_guard_permission (
+    id bigint NOT NULL,
+    name character varying(255),
+    description character varying(1000),
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.sf_guard_permission OWNER TO mic;
+
+--
+-- Name: sf_guard_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_guard_permission_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_guard_permission_id_seq OWNER TO mic;
+
+--
+-- Name: sf_guard_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_guard_permission_id_seq OWNED BY sf_guard_permission.id;
+
+
+--
+-- Name: sf_guard_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_guard_permission_id_seq', 1, true);
+
+
+--
+-- Name: sf_guard_remember_key; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_guard_remember_key (
+    id bigint NOT NULL,
+    user_id bigint,
+    remember_key character varying(32),
+    ip_address character varying(50),
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.sf_guard_remember_key OWNER TO mic;
+
+--
+-- Name: sf_guard_remember_key_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_guard_remember_key_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_guard_remember_key_id_seq OWNER TO mic;
+
+--
+-- Name: sf_guard_remember_key_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_guard_remember_key_id_seq OWNED BY sf_guard_remember_key.id;
+
+
+--
+-- Name: sf_guard_remember_key_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_guard_remember_key_id_seq', 1, false);
+
+
+--
+-- Name: sf_guard_user; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_guard_user (
+    id bigint NOT NULL,
+    first_name character varying(255),
+    last_name character varying(255),
+    email_address character varying(255) NOT NULL,
+    username character varying(128) NOT NULL,
+    algorithm character varying(128) DEFAULT 'sha1'::character varying NOT NULL,
+    salt character varying(128),
+    password character varying(128),
+    is_active boolean DEFAULT true,
+    is_super_admin boolean DEFAULT false,
+    last_login timestamp without time zone,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.sf_guard_user OWNER TO mic;
+
+--
+-- Name: sf_guard_user_group; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_guard_user_group (
+    user_id bigint NOT NULL,
+    group_id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.sf_guard_user_group OWNER TO mic;
+
+--
+-- Name: sf_guard_user_id_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_guard_user_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_guard_user_id_seq OWNER TO mic;
+
+--
+-- Name: sf_guard_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_guard_user_id_seq OWNED BY sf_guard_user.id;
+
+
+--
+-- Name: sf_guard_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_guard_user_id_seq', 4, true);
+
+
+--
+-- Name: sf_guard_user_permission; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_guard_user_permission (
+    user_id bigint NOT NULL,
+    permission_id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.sf_guard_user_permission OWNER TO mic;
+
+--
+-- Name: sf_images; Type: TABLE; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE TABLE sf_images (
+    id_image integer NOT NULL,
+    gallery_id integer NOT NULL,
+    user_id integer NOT NULL,
+    description character varying(200),
+    "order" character(4),
+    name character varying(100) NOT NULL,
+    created_at date,
+    updated_at date
+);
+
+
+ALTER TABLE public.sf_images OWNER TO mic;
+
+--
+-- Name: sf_images_id_image_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sf_images_id_image_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sf_images_id_image_seq OWNER TO mic;
+
+--
+-- Name: sf_images_id_image_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: mic
+--
+
+ALTER SEQUENCE sf_images_id_image_seq OWNED BY sf_images.id_image;
+
+
+--
+-- Name: sf_images_id_image_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sf_images_id_image_seq', 1, true);
+
+
+--
+-- Name: sp_album_id_album_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sp_album_id_album_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sp_album_id_album_seq OWNER TO mic;
+
+--
+-- Name: sp_album_id_album_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sp_album_id_album_seq', 1, false);
+
+
+--
+-- Name: sp_category_id_category_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sp_category_id_category_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sp_category_id_category_seq OWNER TO mic;
+
+--
+-- Name: sp_category_id_category_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sp_category_id_category_seq', 1, false);
+
+
+--
+-- Name: sp_level_id_level_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sp_level_id_level_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sp_level_id_level_seq OWNER TO mic;
+
+--
+-- Name: sp_level_id_level_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sp_level_id_level_seq', 1, false);
+
+
+--
+-- Name: sp_user_id_user_seq; Type: SEQUENCE; Schema: public; Owner: mic
+--
+
+CREATE SEQUENCE sp_user_id_user_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.sp_user_id_user_seq OWNER TO mic;
+
+--
+-- Name: sp_user_id_user_seq; Type: SEQUENCE SET; Schema: public; Owner: mic
+--
+
+SELECT pg_catalog.setval('sp_user_id_user_seq', 1, false);
+
+
+--
+-- Name: id_comments; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_comments ALTER COLUMN id_comments SET DEFAULT nextval('sf_comments_id_comments_seq'::regclass);
+
+
+--
+-- Name: id_gallery; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_gallery ALTER COLUMN id_gallery SET DEFAULT nextval('sf_gallery_id_gallery_seq'::regclass);
+
+
+--
+-- Name: id_members; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_gallery_members ALTER COLUMN id_members SET DEFAULT nextval('sf_gallery_members_id_members_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_guard_forgot_password ALTER COLUMN id SET DEFAULT nextval('sf_guard_forgot_password_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_guard_group ALTER COLUMN id SET DEFAULT nextval('sf_guard_group_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_guard_permission ALTER COLUMN id SET DEFAULT nextval('sf_guard_permission_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_guard_remember_key ALTER COLUMN id SET DEFAULT nextval('sf_guard_remember_key_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_guard_user ALTER COLUMN id SET DEFAULT nextval('sf_guard_user_id_seq'::regclass);
+
+
+--
+-- Name: id_image; Type: DEFAULT; Schema: public; Owner: mic
+--
+
+ALTER TABLE sf_images ALTER COLUMN id_image SET DEFAULT nextval('sf_images_id_image_seq'::regclass);
+
+
+--
+-- Data for Name: sf_comments; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_comments (id_comments, image_id, "user", site, email, message, created_at, updated_at, ip, is_valid) FROM stdin;
+\.
+
+
+--
+-- Data for Name: sf_gallery; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_gallery (id_gallery, title, description, user_id, created_at, updated_at) FROM stdin;
+1	aa	ddd	1	\N	\N
+2	ccc	ccc	1	\N	\N
+\.
+
+
+--
+-- Data for Name: sf_gallery_members; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_gallery_members (id_members, gallery_id, user_id) FROM stdin;
+1	1	1
+2	2	4
+3	1	4
+4	1	1
+\.
+
+
+--
+-- Data for Name: sf_guard_forgot_password; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_guard_forgot_password (id, user_id, unique_key, expires_at, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: sf_guard_group; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_guard_group (id, name, description, created_at, updated_at) FROM stdin;
+1	admin	Administrator group	2010-11-02 11:18:32	2010-11-02 11:18:32
+\.
+
+
+--
+-- Data for Name: sf_guard_group_permission; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_guard_group_permission (group_id, permission_id, created_at, updated_at) FROM stdin;
+1	1	2010-11-02 11:18:32	2010-11-02 11:18:32
+\.
+
+
+--
+-- Data for Name: sf_guard_permission; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_guard_permission (id, name, description, created_at, updated_at) FROM stdin;
+1	admin	Administrator permission	2010-11-02 11:18:32	2010-11-02 11:18:32
+\.
+
+
+--
+-- Data for Name: sf_guard_remember_key; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_guard_remember_key (id, user_id, remember_key, ip_address, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: sf_guard_user; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_guard_user (id, first_name, last_name, email_address, username, algorithm, salt, password, is_active, is_super_admin, last_login, created_at, updated_at) FROM stdin;
+1	John	Doe	john.doe@gmail.com	admin	sha1	dd3568164ba81baaf0d2d85008f4afd3	b6ab0848caf42534774415b3afa711dc61810503	t	t	\N	2010-11-02 11:18:32	2010-11-02 11:18:32
+4	mic	mic	mic@unixmexico.org	mic	sha1	\N	\N	t	t	\N	2010-11-02 00:00:00	2010-11-02 00:00:00
+\.
+
+
+--
+-- Data for Name: sf_guard_user_group; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_guard_user_group (user_id, group_id, created_at, updated_at) FROM stdin;
+1	1	2010-11-02 11:18:33	2010-11-02 11:18:33
+\.
+
+
+--
+-- Data for Name: sf_guard_user_permission; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_guard_user_permission (user_id, permission_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: sf_images; Type: TABLE DATA; Schema: public; Owner: mic
+--
+
+COPY sf_images (id_image, gallery_id, user_id, description, "order", name, created_at, updated_at) FROM stdin;
+1	1	1	dddddddddddddddd	\N	f23e94de840bf37c225df15f7a324aff3fc6a8cd.jpg	2010-11-03	\N
+\.
+
+
+--
+-- Name: sf_comments_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_comments
+    ADD CONSTRAINT sf_comments_pkey PRIMARY KEY (id_comments);
+
+
+--
+-- Name: sf_gallery_members_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_gallery_members
+    ADD CONSTRAINT sf_gallery_members_pkey PRIMARY KEY (id_members);
+
+
+--
+-- Name: sf_gallery_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_gallery
+    ADD CONSTRAINT sf_gallery_pkey PRIMARY KEY (id_gallery);
+
+
+--
+-- Name: sf_guard_forgot_password_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_forgot_password
+    ADD CONSTRAINT sf_guard_forgot_password_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sf_guard_group_name_key; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_group
+    ADD CONSTRAINT sf_guard_group_name_key UNIQUE (name);
+
+
+--
+-- Name: sf_guard_group_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_group_permission
+    ADD CONSTRAINT sf_guard_group_permission_pkey PRIMARY KEY (group_id, permission_id);
+
+
+--
+-- Name: sf_guard_group_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_group
+    ADD CONSTRAINT sf_guard_group_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sf_guard_permission_name_key; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_permission
+    ADD CONSTRAINT sf_guard_permission_name_key UNIQUE (name);
+
+
+--
+-- Name: sf_guard_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_permission
+    ADD CONSTRAINT sf_guard_permission_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sf_guard_remember_key_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_remember_key
+    ADD CONSTRAINT sf_guard_remember_key_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sf_guard_user_email_address_key; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_user
+    ADD CONSTRAINT sf_guard_user_email_address_key UNIQUE (email_address);
+
+
+--
+-- Name: sf_guard_user_group_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_user_group
+    ADD CONSTRAINT sf_guard_user_group_pkey PRIMARY KEY (user_id, group_id);
+
+
+--
+-- Name: sf_guard_user_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_user_permission
+    ADD CONSTRAINT sf_guard_user_permission_pkey PRIMARY KEY (user_id, permission_id);
+
+
+--
+-- Name: sf_guard_user_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_user
+    ADD CONSTRAINT sf_guard_user_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sf_guard_user_username_key; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_guard_user
+    ADD CONSTRAINT sf_guard_user_username_key UNIQUE (username);
+
+
+--
+-- Name: sf_images_pkey; Type: CONSTRAINT; Schema: public; Owner: mic; Tablespace: 
+--
+
+ALTER TABLE ONLY sf_images
+    ADD CONSTRAINT sf_images_pkey PRIMARY KEY (id_image);
+
+
+--
+-- Name: is_active_idx; Type: INDEX; Schema: public; Owner: mic; Tablespace: 
+--
+
+CREATE INDEX is_active_idx ON sf_guard_user USING btree (is_active);
+
+
+--
+-- Name: sf_comments_image_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_comments
+    ADD CONSTRAINT sf_comments_image_id_fkey FOREIGN KEY (image_id) REFERENCES sf_images(id_image) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: sf_gallery_members_gallery_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_gallery_members
+    ADD CONSTRAINT sf_gallery_members_gallery_id_fkey FOREIGN KEY (gallery_id) REFERENCES sf_gallery(id_gallery) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: sf_gallery_members_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_gallery_members
+    ADD CONSTRAINT sf_gallery_members_user_id_fkey FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: sf_gallery_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_gallery
+    ADD CONSTRAINT sf_gallery_user_id_fkey FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: sf_guard_forgot_password_user_id_sf_guard_user_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_guard_forgot_password
+    ADD CONSTRAINT sf_guard_forgot_password_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
+
+
+--
+-- Name: sf_guard_group_permission_group_id_sf_guard_group_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_guard_group_permission
+    ADD CONSTRAINT sf_guard_group_permission_group_id_sf_guard_group_id FOREIGN KEY (group_id) REFERENCES sf_guard_group(id) ON DELETE CASCADE;
+
+
+--
+-- Name: sf_guard_group_permission_permission_id_sf_guard_permission_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_guard_group_permission
+    ADD CONSTRAINT sf_guard_group_permission_permission_id_sf_guard_permission_id FOREIGN KEY (permission_id) REFERENCES sf_guard_permission(id) ON DELETE CASCADE;
+
+
+--
+-- Name: sf_guard_remember_key_user_id_sf_guard_user_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_guard_remember_key
+    ADD CONSTRAINT sf_guard_remember_key_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
+
+
+--
+-- Name: sf_guard_user_group_group_id_sf_guard_group_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_guard_user_group
+    ADD CONSTRAINT sf_guard_user_group_group_id_sf_guard_group_id FOREIGN KEY (group_id) REFERENCES sf_guard_group(id) ON DELETE CASCADE;
+
+
+--
+-- Name: sf_guard_user_group_user_id_sf_guard_user_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_guard_user_group
+    ADD CONSTRAINT sf_guard_user_group_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
+
+
+--
+-- Name: sf_guard_user_permission_permission_id_sf_guard_permission_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_guard_user_permission
+    ADD CONSTRAINT sf_guard_user_permission_permission_id_sf_guard_permission_id FOREIGN KEY (permission_id) REFERENCES sf_guard_permission(id) ON DELETE CASCADE;
+
+
+--
+-- Name: sf_guard_user_permission_user_id_sf_guard_user_id; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_guard_user_permission
+    ADD CONSTRAINT sf_guard_user_permission_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
+
+
+--
+-- Name: sf_images_gallery_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_images
+    ADD CONSTRAINT sf_images_gallery_id_fkey FOREIGN KEY (gallery_id) REFERENCES sf_gallery(id_gallery) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: sf_images_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: mic
+--
+
+ALTER TABLE ONLY sf_images
+    ADD CONSTRAINT sf_images_user_id_fkey FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
